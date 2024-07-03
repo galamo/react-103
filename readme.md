@@ -7,3 +7,7 @@
 # EX2 - 
 1. split your components to DIFF files under components folder
 2. each component will have her own folder + tsx file.
+
+# EX3 - 
+1. Add iD + type to each joke in the UI
+
