@@ -1,5 +1,6 @@
 
 import './App.css'
+import { WhatIsYourName } from './components/whats-your-name';
 
 export default function App() {
 
@@ -7,18 +8,16 @@ export default function App() {
         <>
             <h1 style={{ color: "red" }} >Hello</h1>
             <WhatIsYourName />
-
+            <HowDoILookLike />
         </>
     )
 }
-
-
-function WhatIsYourName() {
-    return <h1> {getYourName()} </h1>
+function HowDoILookLike() {
+    const width = 300;
+    const imageUrl = 'https://static1.srcdn.com/wordpress/wp-content/uploads/2023/04/disney-s-frozen-queen-elsa-1-1.jpg'
+    return <img width={width} src={imageUrl} />
 }
 
-function getYourName() {
-    return "Gal Amouyal"
-}
+
 
 
