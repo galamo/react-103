@@ -17,6 +17,7 @@ export function JokesList() {
   return (
     <div className={css.thisIsGreenBackground}>
       <div>
+        <button>Show Only long punchline (more than 10 characters) </button>
         <input
           type="text"
           placeholder="search for joke"

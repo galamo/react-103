@@ -37,3 +37,8 @@
 
 - Single joke component - Dont show the punch line! if the user click on button "Show my punchline"
 - so show the user the punch line, and hide the button, default punch like is hidden
+
+# Ex 5 - 7.6
+
+- implement another filter `<button>Show Only long punchline (more than 10 characters) </button>`
+- when clicking on the button the list will present only the jokes with long punchline
