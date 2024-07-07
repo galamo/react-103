@@ -12,7 +12,13 @@ export function SingleJoke(props: Props) {
   const [showPunchline, setShowPunchline] = useState(false);
 
   return (
-    <div style={{ border: "1px dashed black" }}>
+    <div
+      style={{
+        border: "1px dashed black",
+        margin: "20px",
+        background: "lightgreen",
+      }}
+    >
       <h2>{props.jokeId}</h2>
       <h3>😂</h3>
       <h2 style={{ background: "green" }}>{props.description}</h2>

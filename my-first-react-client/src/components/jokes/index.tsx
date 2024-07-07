@@ -7,17 +7,29 @@ type SingleJokeType = (typeof jokesData)[0];
 
 export function JokesList() {
   const [filter, setFilter] = useState("");
+  const [onlyLongPunchline, setOnlyLongPunchline] = useState(false);
 
-  const currentJokes = filter
+  const jokesAfterFilter1 = filter
     ? jokesData.filter((joke) =>
         joke.setup.toLowerCase().includes(filter.toLowerCase())
       )
     : jokesData;
 
+  const jokesAfterFilter2 = onlyLongPunchline
+    ? jokesAfterFilter1.filter((joke) => joke.punchline.length > 10)
+    : jokesAfterFilter1;
+
   return (
-    <div className={css.thisIsGreenBackground}>
+    <div>
       <div>
-        <button>Show Only long punchline (more than 10 characters) </button>
+        <button
+          style={{ backgroundColor: onlyLongPunchline ? "green" : "" }}
+          onClick={() => {
+            setOnlyLongPunchline(!onlyLongPunchline);
+          }}
+        >
+          Only Long Punchline
+        </button>
         <input
           type="text"
           placeholder="search for joke"
@@ -25,11 +37,12 @@ export function JokesList() {
             setFilter(e?.target?.value?.toLowerCase());
           }}
         />
-        <h3> Result: {currentJokes.length} </h3>
+        <h3> Result: {jokesAfterFilter2.length} </h3>
       </div>
-      {currentJokes.map((singleJoke: SingleJokeType) => {
+      {jokesAfterFilter2.map((singleJoke: SingleJokeType) => {
         return (
           <SingleJoke
+            key={singleJoke.id}
             punchline={singleJoke.punchline}
             jokeId={singleJoke.id}
             description={singleJoke.setup}
@@ -39,4 +52,8 @@ export function JokesList() {
       })}
     </div>
   );
+}
+
+{
+  /* <CountryCard ...JokesList key={name÷÷} /> */
 }

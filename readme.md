@@ -42,3 +42,23 @@
 
 - implement another filter `<button>Show Only long punchline (more than 10 characters) </button>`
 - when clicking on the button the list will present only the jokes with long punchline
+
+
+
+
+
+
+
+
+
+
+
+
+# Homework
+
+## based on In the countries solution - continue to last homework
+
+1. implement search filter by country name
+2. implement visit button in each country - when clicking on the `visit` the AddComment component will presented
+3. implement country AddComment functionality by adding a comment to each country
+4. implement filter - filter all the countries that are more than 10M population count.
