@@ -21,7 +21,7 @@ export function WhatIsYourName() {
       >
         Set User Name
       </button>
-      <h1> {userName} </h1>
+      <h1 style={{ color: inputValue }}> {userName} </h1>
     </div>
   );
 }
