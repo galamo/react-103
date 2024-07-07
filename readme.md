@@ -31,4 +31,9 @@
 
 # Ex 3 - 7.6
 
-- Implement "You Like This" functionality in Single Joke Component, in case the user clicks the button "Like" he will see the Text "You Like This", in case the user will click again text will disapear - toggle!
+- Implement "You Like This" functionality in Single Joke Component, in case the user clicks the button "Like" he will see the Text "You Like This", in case the user will click again text will be hidden - toggle!
+
+# Ex 4 - 7.6
+
+- Single joke component - Dont show the punch line! if the user click on button "Show my punchline"
+- so show the user the punch line, and hide the button, default punch like is hidden

@@ -8,9 +8,8 @@ type Props = {
 };
 
 export function SingleJoke(props: Props) {
-  const [counter, setCounter] = useState(0);
+  const [youLikeThis, setYouLikeThis] = useState(false);
 
-  console.log("counter:", counter);
   return (
     <div style={{ border: "1px dashed black" }}>
       <h2>{props.jokeId}</h2>
@@ -21,10 +20,10 @@ export function SingleJoke(props: Props) {
       <div>
         <button
           onClick={() => {
-            setCounter(counter + 1);
+            setYouLikeThis(!youLikeThis);
           }}
         >
-          👍 {counter > 0 ? "You Like this" : " "}
+          👍 {youLikeThis ? "You Like This" : null}
         </button>
       </div>
     </div>
