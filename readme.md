@@ -24,3 +24,7 @@
 
 - Move all inline CSS from react-103/my-first-react-client/src/components/jokes/single-joke.tsx to
   `singleJoke.module.css` file
+
+# Ex 2 - 7.6
+
+- Setting the color of the h1 in the main page, to be part of the style
