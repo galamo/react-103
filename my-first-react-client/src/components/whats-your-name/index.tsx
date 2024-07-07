@@ -1,9 +1,27 @@
-
+import { useState } from "react";
 
 export function WhatIsYourName() {
-    return <h1> {getYourName()} </h1>
-}
+  const [userName, setUserName] = useState("Gal Amouyal");
+  const [inputValue, setInputValue] = useState("aaa");
 
-function getYourName() {
-    return "Gal Amouyal"
+  return (
+    <div>
+      <input
+        value={inputValue}
+        type="text"
+        id="input"
+        onChange={(e) => {
+          setInputValue(e.target.value);
+        }}
+      />
+      <button
+        onClick={() => {
+          setUserName(inputValue);
+        }}
+      >
+        Set User Name
+      </button>
+      <h1> {userName} </h1>
+    </div>
+  );
 }
