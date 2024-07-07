@@ -28,3 +28,7 @@
 # Ex 2 - 7.6
 
 - Setting the color of the h1 in the main page, to be part of the style
+
+# Ex 3 - 7.6
+
+- Implement "You Like This" functionality in Single Joke Component, in case the user clicks the button "Like" he will see the Text "You Like This", in case the user will click again text will disapear - toggle!
