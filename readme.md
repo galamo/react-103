@@ -69,3 +69,9 @@
 1. implement API request using useEffect hook for countries api
 # Ex - 2 10.7 
 2. searching country by name- implement API request on each input text change, using useEffect dependency array
+
+
+# Homework 10.7
+1. Go over the last lesson and learn what we dont deeply!
+2. Read about useEffect cleanup in google, try to understand when we need to use it. https://blog.logrocket.com/understanding-react-useeffect-cleanup-function/
+3. read about react router dom  https://reactrouter.com/en/main
