@@ -67,3 +67,5 @@
 
 # Ex - 1 10.7 
 1. implement API request using useEffect hook for countries api
+# Ex - 2 10.7 
+2. searching country by name- implement API request on each input text change, using useEffect dependency array
