@@ -8,6 +8,7 @@ import { JokesList } from './components/jokes';
 import { SingleJoke } from './components/jokes/single-joke';
 import { WhatIsYourName } from './components/whats-your-name';
 import css from "./style.module.css"
+import MoviesPage from './components/moviesPage';
 export default function App() {
     const [settings, setSettings] = useState<{ darkMode: boolean }>({ darkMode: false })
 
@@ -17,7 +18,7 @@ export default function App() {
     return (
         <>
             <div style={themeStyle}>
-                <span id="switch2">{settings.darkMode ? "light" : "dark"} mode</span>
+                {/* <span id="switch2">{settings.darkMode ? "light" : "dark"} mode</span>
                 <InputSwitch aria-labelledby="switch2" checked={settings.darkMode} onChange={(e) => {
                     setSettings({ ...settings, darkMode: !settings.darkMode })
                 }} />
@@ -27,7 +28,8 @@ export default function App() {
                 <SingleJoke description='aa' type='aa' jokeId={111} punchline='sss' />
                 <WhatIsYourName />
                 <HowDoILookLike />
-                <JokesList />
+                <JokesList /> */}
+                <MoviesPage />
             </div>
         </>
     )
