@@ -14,10 +14,10 @@ export function JokesList() {
         async function getJokesFromApi() {
             const result = await fetch("https://official-joke-api.appspot.com/jokes/ten")
             const jokesArray = await result.json()
-            setJokesFromApi(jokesArray as SingleJokeType[])
+            setJokesFromApi(jokesArray)
         }
         getJokesFromApi()
-    }, [onlyLongPunchline])
+    }, [])
 
     const jokesAfterFilter1 = filter
         ? jokesFromApi.filter((joke) =>
