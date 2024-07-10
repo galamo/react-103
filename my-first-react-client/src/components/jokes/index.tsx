@@ -9,15 +9,16 @@ export function JokesList() {
     const [filter, setFilter] = useState("");
     const [onlyLongPunchline, setOnlyLongPunchline] = useState(false);
     const [jokesFromApi, setJokesFromApi] = useState<SingleJokeType[]>([]);
+    const [page, setPage] = useState(0)
 
     useEffect(() => {
         async function getJokesFromApi() {
             const result = await fetch("https://official-joke-api.appspot.com/jokes/ten")
             const jokesArray = await result.json()
-            setJokesFromApi(jokesArray)
+            setJokesFromApi([...jokesFromApi, ...jokesArray])
         }
         getJokesFromApi()
-    }, [])
+    }, [page])
 
     const jokesAfterFilter1 = filter
         ? jokesFromApi.filter((joke) =>
@@ -39,6 +40,13 @@ export function JokesList() {
                     }}
                 >
                     Only Long Punchline
+                </button>
+                <button
+                    onClick={() => {
+                        setPage(page + 1);
+                    }}
+                >
+                    Fetch more
                 </button>
                 <input
                     type="text"
