@@ -62,3 +62,8 @@
 2. implement visit button in each country - when clicking on the `visit` the AddComment component will presented
 3. implement country AddComment functionality by adding a comment to each country
 4. implement filter - filter all the countries that are more than 10M population count.
+
+
+
+# Ex - 1 10.7 
+1. implement API request using useEffect hook for countries api
