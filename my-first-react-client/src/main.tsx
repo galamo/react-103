@@ -6,7 +6,7 @@ import "./App.css";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
+    // <React.StrictMode>
+    <App />
+    // </React.StrictMode >/
 );

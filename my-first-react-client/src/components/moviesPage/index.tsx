@@ -7,20 +7,26 @@ import MoviesList from './moviesList';
 import { getMoviesApi, MovieType } from './service';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import lodash from "lodash"
+import { Actors } from './actorsPage';
+import { Button } from 'primereact/button';
 
 export default function MoviesPage() {
 
     const [movies, setMovies] = useState<Array<MovieType>>([])
     const [inputValue, setInputValue] = useState<string>("")
     const [isLoading, setIsLoading] = useState<boolean>(false)
-
+    const [showActors, setShowActors] = useState<boolean>(true)
 
     useEffect(() => {
+        let isSetState = true
         async function searchMovies() {
             try {
                 setIsLoading(true)
                 const moviesArray = await getMoviesApi(inputValue)
-                setMovies(moviesArray)
+                if (isSetState) {
+                    setMovies(moviesArray)
+                }
+
             } catch (error) {
                 alert(error)
             } finally {
@@ -29,6 +35,9 @@ export default function MoviesPage() {
         }
         if (inputValue) {
             searchMovies()
+        }
+        return () => {
+            isSetState = false;
         }
     }, [inputValue])
 
@@ -55,6 +64,10 @@ export default function MoviesPage() {
 
     return <div>
         <MegaMenu model={headerItems} orientation="horizontal" breakpoint="960px" className="p-3 surface-0 shadow-2" style={{ borderRadius: '3rem' }} />
+        <div> <Button onClick={() => {
+            setShowActors(!showActors)
+        }}> Show/Hide Actors </Button> </div>
+        <div> {showActors ? <Actors /> : null}</div>
         <div style={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}>
             <InputText onChange={searchHandler} placeholder="search" />
         </div>
@@ -62,6 +75,7 @@ export default function MoviesPage() {
             {isLoading ? <ProgressSpinner />
                 : <MoviesList movies={movies} />}
         </div>
+
     </div >
 }
 
