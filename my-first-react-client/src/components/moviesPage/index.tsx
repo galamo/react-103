@@ -76,12 +76,19 @@ export default function MoviesPage() {
         <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem", flexWrap: "wrap", gap: "20px" }}>
             {isLoading ? <ProgressSpinner />
                 : <MoviesList movies={movies} doSomething={(m: MovieType): void => {
-                    setFavoritesMovies([...favoritesMovies, m])
+                    const findMovie = favoritesMovies.find(movie => movie.imdbID === m.imdbID)
+                    if (!findMovie) {
+                        setFavoritesMovies([...favoritesMovies, m])
+                    }
+
 
                 }} />}
         </div>
         <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem", flexWrap: "wrap", gap: "20px" }}>
-            <Favorites movies={favoritesMovies} />
+            <Favorites del={(movieToDelete: MovieType) => {
+                const moviesAfterDelete = favoritesMovies.filter(m => m.imdbID !== movieToDelete.imdbID)
+                setFavoritesMovies(moviesAfterDelete)
+            }} movies={favoritesMovies} />
         </div>
     </div >
 }
