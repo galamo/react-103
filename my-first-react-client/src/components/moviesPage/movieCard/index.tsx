@@ -3,13 +3,18 @@ import { Button } from "primereact/button"
 import { MovieType } from '../service';
 import lodash from "lodash"
 
-export default function MovieCard(props: MovieType) {
+
+export default function MovieCard(props: MovieType & { doSomething: (p: MovieType) => void }) {
     const header = (
         <img alt="Card" style={{ maxHeight: 300, minHeight: 300 }} src={props.Poster} />
     );
+
     const footer = (
         <>
-            <Button label="Save" icon="pi pi-check" />
+            <Button onClick={() => {
+                const { doSomething, ...restOfProps } = props
+                props.doSomething(restOfProps)
+            }} label="Favorite" icon="pi pi-check" />
             <Button label="Cancel" severity="secondary" icon="pi pi-times" style={{ marginLeft: '0.5em' }} />
         </>
     );

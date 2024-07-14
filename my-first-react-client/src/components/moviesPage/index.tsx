@@ -9,10 +9,12 @@ import { ProgressSpinner } from 'primereact/progressspinner';
 import lodash from "lodash"
 import { Actors } from './actorsPage';
 import { Button } from 'primereact/button';
+import { Favorites } from './favorites';
 
 export default function MoviesPage() {
 
     const [movies, setMovies] = useState<Array<MovieType>>([])
+    const [favoritesMovies, setFavoritesMovies] = useState<Array<MovieType>>([])
     const [inputValue, setInputValue] = useState<string>("")
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [showActors, setShowActors] = useState<boolean>(true)
@@ -73,9 +75,14 @@ export default function MoviesPage() {
         </div>
         <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem", flexWrap: "wrap", gap: "20px" }}>
             {isLoading ? <ProgressSpinner />
-                : <MoviesList movies={movies} />}
-        </div>
+                : <MoviesList movies={movies} doSomething={(m: MovieType): void => {
+                    setFavoritesMovies([...favoritesMovies, m])
 
+                }} />}
+        </div>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem", flexWrap: "wrap", gap: "20px" }}>
+            <Favorites movies={favoritesMovies} />
+        </div>
     </div >
 }
 
