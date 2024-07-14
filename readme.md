@@ -80,3 +80,12 @@
 
 # Ex - 1 14.7
 - support Delete movie from favorite!
+
+# Ex - 2 14.7
+- Add new Route to your application
+- Route name will be - Products
+- Add navigation from all routes to Products and from products to the rest of the routes
+
+
+
+
