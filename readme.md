@@ -86,6 +86,10 @@
 - Route name will be - Products
 - Add navigation from all routes to Products and from products to the rest of the routes
 
+# Homework - 14.7 
+1. Refactor the Movies Application (my-first-react-client) to work with Routing.
+2. Pages: MoviesPage, CountriesPage, use the main navigation for routing - Links ( combine between homework and class project) 
+3. try to create MoviePage - SINGLE MOVIE PAGE, when clicking on the "Go to Movie page" on each card the application will navigate to new page with the movie Id and request - hint: the movie id should be in the query param `/movie/id1234`
 
 
 
