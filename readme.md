@@ -75,3 +75,8 @@
 1. Go over the last lesson and learn what we did deeply!
 2. Read about useEffect cleanup in google, try to understand when we need to use it. https://blog.logrocket.com/understanding-react-useeffect-cleanup-function/
 3. read about react router dom  https://reactrouter.com/en/main
+
+
+
+# Ex - 1 14.7
+- support Delete movie from favorite!
