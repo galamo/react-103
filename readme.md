@@ -102,3 +102,11 @@
 4. create new component `MovieTitleResult`
 
 
+
+# Homework 17.7
+- Add a new feature to our application
+1. Statistics Page - show HARDCODED movies data `[{movieName: "scream" , numberOfLikes: 50},
+{movieName: "scream2" , numberOfLikes: 30},{movieName: "scream3" , numberOfLikes: 30}
+]` on chart
+2. use https://mui.com/x/react-charts/     
+3. read about context Api - useContext (https://react.dev/reference/react/createContext)
