@@ -110,3 +110,14 @@
 ]` on chart
 2. use https://mui.com/x/react-charts/     
 3. read about context Api - useContext (https://react.dev/reference/react/createContext)
+
+
+
+
+
+# Ex - 1 21.7
+1. Create Settings Component Page 
+2. Add a feature to support toggle between local time and utc 
+localtime = toLocaleString() utc- toISOString()
+3. use the following UI : https://mui.com/material-ui/react-switch/
+4. use Context API
