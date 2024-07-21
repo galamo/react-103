@@ -121,3 +121,15 @@
 localtime = toLocaleString() utc- toISOString()
 3. use the following UI : https://mui.com/material-ui/react-switch/
 4. use Context API
+
+
+
+
+# Homework 21.7 
+in the following homework use - useContext .
+1. Support in the setting changing the Application theme - light / dart
+2. dark mode - card - black, text - white, light mode - current.
+3. Show statistics page based on favorites - Movie/Series in pie chart
+4. try to save the favorites in Local storage
+
+

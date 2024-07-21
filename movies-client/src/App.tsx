@@ -10,7 +10,8 @@ import Movies from './components/pages/movies';
 import { Root } from './components/pages/root';
 import Movie from './components/pages/movie';
 import FavoritesPage from './components/pages/favorites';
-import { FavoriteContextWrapper } from './components/context';
+import { ContextWrapper } from './components/context';
+import SettingsPage from './components/pages/settings';
 
 
 export const routes = [
@@ -45,6 +46,12 @@ export const routes = [
         visible: false,
         element: <Movie />,
     },
+    {
+        path: "settings",
+        label: "Settings",
+        visible: true,
+        element: <SettingsPage />,
+    },
 ]
 const router = createBrowserRouter([
     {
@@ -60,9 +67,9 @@ function App() {
 
     return (
         <>
-            <FavoriteContextWrapper >
+            <ContextWrapper >
                 <RouterProvider router={router} />
-            </FavoriteContextWrapper>
+            </ContextWrapper>
         </>
     )
 }
