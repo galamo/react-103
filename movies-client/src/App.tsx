@@ -1,5 +1,4 @@
 
-// @ts-nocheck
 import './App.css'
 import {
     createBrowserRouter,
@@ -11,9 +10,7 @@ import Movies from './components/pages/movies';
 import { Root } from './components/pages/root';
 import Movie from './components/pages/movie';
 import FavoritesPage from './components/pages/favorites';
-import { FavoritesContext } from './components/context';
-import { useState } from 'react';
-
+import { FavoriteContextWrapper } from './components/context';
 
 
 export const routes = [
@@ -60,14 +57,12 @@ const router = createBrowserRouter([
 
 function App() {
 
-    const [favorites, setFavorites] = useState([])
-    
+
     return (
         <>
-
-            <FavoritesContext.Provider value={{ favorites, setFavorites }}>
+            <FavoriteContextWrapper >
                 <RouterProvider router={router} />
-            </FavoritesContext.Provider>
+            </FavoriteContextWrapper>
         </>
     )
 }
