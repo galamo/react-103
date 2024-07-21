@@ -15,7 +15,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AirplayIcon from '@mui/icons-material/Airplay';
 import { useNavigate } from 'react-router-dom';
 
-export default function MovieCard(props: MovieType & { doSomething: (p: MovieType) => void }) {
+export default function MovieCard(props: MovieType & { doSomething?: (p: MovieType) => void }) {
     const navigate = useNavigate()
     return (
         <Card sx={{ maxWidth: 345 }}>
@@ -41,14 +41,17 @@ export default function MovieCard(props: MovieType & { doSomething: (p: MovieTyp
             />
             <CardContent>
                 <Typography variant="body2" color="text.secondary">
-                    {props.Type}
+                    <h2> {props.Type}</h2>
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites">
                     <FavoriteIcon onClick={() => {
                         const { doSomething, ...restOfProps } = props
-                        props.doSomething(restOfProps)
+                        console.log(restOfProps)
+                        if (typeof props?.doSomething === "function") {
+                            props?.doSomething(restOfProps)
+                        }
                     }} />
                 </IconButton>
                 <IconButton aria-label="add to favorites">
@@ -60,4 +63,6 @@ export default function MovieCard(props: MovieType & { doSomething: (p: MovieTyp
         </Card>
     );
 }
+
+
 

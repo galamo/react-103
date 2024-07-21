@@ -1,15 +1,16 @@
 
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import MoviesList from './moviesList';
 import { getMoviesApi, MovieType } from './service';
 import lodash from "lodash"
 import { CircularProgress, TextField } from '@mui/material';
+import { FavoritesContext } from '../../context';
 
 export default function MoviesPage() {
 
     const [movies, setMovies] = useState<Array<MovieType>>([])
-    const [favoritesMovies, setFavoritesMovies] = useState<Array<MovieType>>([])
+    const context = useContext(FavoritesContext)
     const [inputValue, setInputValue] = useState<string>("")
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -49,9 +50,9 @@ export default function MoviesPage() {
         <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem", flexWrap: "wrap", gap: "20px" }}>
             {isLoading ? <CircularProgress />
                 : <MoviesList movies={movies} doSomething={(m: MovieType): void => {
-                    const findMovie = favoritesMovies.find(movie => movie.imdbID === m.imdbID)
+                    const findMovie = context.favorites.find(movie => movie.imdbID === m.imdbID)
                     if (!findMovie) {
-                        setFavoritesMovies([...favoritesMovies, m])
+                        context.setFavorites([...context.favorites, m])
                     }
                 }} />}
         </div>

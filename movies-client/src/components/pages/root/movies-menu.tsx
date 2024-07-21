@@ -27,12 +27,14 @@ export default function MoviesMenu(props: { isOpen: boolean, setIsOpen: any }) {
             <List>
                 {routes.filter(route => route.visible).map((route) => (
                     <ListItem key={route.label} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {getIconsMapper(route.label)}
-                            </ListItemIcon>
-                            <Link style={{ color: "black", textDecoration: "none" }} to={route.path} ><ListItemText primary={route.label} /></Link>
-                        </ListItemButton>
+                        <Link style={{ color: "black", textDecoration: "none" }} to={route.path} >
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    {getIconsMapper(route.label)}
+                                </ListItemIcon>
+                                <ListItemText primary={route.label} />
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                 ))}
             </List>
