@@ -142,5 +142,6 @@ for example {2022: 10, 2020: 1, 2024: 40, 1999: 5}
 5. add DDL - drop down list to filter the chart result by "Type" 
 6. Create "Clear History" Button that will clean your search history 
 7. support Local storage
+8. support useMemo in the aggregation calculation from 4.
 
 
