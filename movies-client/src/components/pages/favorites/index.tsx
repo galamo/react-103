@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { FavoritesContext } from "../../context"
 import MoviesList from "../movies/moviesList"
 import { MovieType } from "../movies/service"
+import StatisticsPage from "../statistics"
 
 export default function FavoritesPage() {
     const context = useContext(FavoritesContext)
@@ -11,5 +12,6 @@ export default function FavoritesPage() {
             const filteredMoviesWithoutRemovedMovie = context.favorites.filter(current => current.imdbID !== currentMovie.imdbID)
             context.setFavorites([...filteredMoviesWithoutRemovedMovie])
         }} />
+
     </div>
 }

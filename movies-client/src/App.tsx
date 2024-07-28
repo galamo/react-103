@@ -12,6 +12,7 @@ import Movie from './components/pages/movie';
 import FavoritesPage from './components/pages/favorites';
 import { ContextWrapper } from './components/context';
 import SettingsPage from './components/pages/settings';
+import StatisticsPage from './components/pages/statistics';
 
 
 export const routes = [
@@ -38,7 +39,7 @@ export const routes = [
         path: "statistics",
         label: "Statistics",
         visible: true,
-        element: <FavoritesPage />,
+        element: <StatisticsPage />,
     },
     {
         path: "movie/:id",
