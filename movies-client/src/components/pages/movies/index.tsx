@@ -4,13 +4,14 @@ import { useContext, useEffect, useState } from 'react';
 import MoviesList from './moviesList';
 import { getMoviesApi, MovieType } from './service';
 import lodash from "lodash"
-import { CircularProgress, TextField } from '@mui/material';
-import { FavoritesContext } from '../../context';
+import { Button, CircularProgress, TextField } from '@mui/material';
+import { FavoritesContext, HistoryContext } from '../../context';
 
 export default function MoviesPage() {
 
     const [movies, setMovies] = useState<Array<MovieType>>([])
     const context = useContext(FavoritesContext)
+    const historyContext = useContext(HistoryContext)
     const [inputValue, setInputValue] = useState<string>("")
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -46,6 +47,12 @@ export default function MoviesPage() {
     return <div>
         <div style={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}>
             <TextField onChange={searchHandler} placeholder="search" id="outlined-basic" label="Outlined" variant="outlined" />
+            <Button onClick={() => {
+                historyContext.setHistory([...movies, ...historyContext.history])
+            }}> Save History </Button>
+            <Button onClick={() => {
+                historyContext.setHistory([])
+            }}> Clear History </Button>
         </div>
         <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem", flexWrap: "wrap", gap: "20px" }}>
             {isLoading ? <CircularProgress />
