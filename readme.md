@@ -170,3 +170,4 @@ Real Example:
 
 4. present all the list of operations in a new Page called Audit page.
 5. add simple text filter by movie name on the audit operations
+6. support chart size settings
