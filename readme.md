@@ -150,3 +150,23 @@ for example {2022: 10, 2020: 1, 2024: 40, 1999: 5}
 # EX 1 - 31.7 
 1. support theme action in our reducer
 2. theme controlled in setting page, and reflected on home page.
+
+
+
+
+# Homework
+1. Support useReducer & useContext in the following Task
+2. Audit page
+3. audit page will show what the user did in his application
+For example
+- User Added <MovieName> to favorite <Time>
+- User Removed <MovieName> from favorite <Time>
+- User search for <MovieName> <Time>
+- User Saved to history <X> movies <Time>
+
+Real Example:
+- User Added 'Bad Boys' to favorite '7/31/2024, 8:41:07 PM'
+- User Saved to history 20 movies '7/31/2024, 8:50:07 PM'
+
+4. present all the list of operations in a new Page called Audit page.
+5. add simple text filter by movie name on the audit operations
