@@ -145,3 +145,8 @@ for example {2022: 10, 2020: 1, 2024: 40, 1999: 5}
 8. support useMemo in the aggregation calculation from 4.
 
 
+
+
+# EX 1 - 31.7 
+1. support theme action in our reducer
+2. theme controlled in setting page, and reflected on home page.
