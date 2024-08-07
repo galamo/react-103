@@ -29,6 +29,8 @@ export default function StatisticsPage() {
         }, {})
     }, [])
 
+    const [chartWidth, setChartWidth] = useState(500)
+
     const filteredOriginalData = filterData(historyContext.history)
     const resultAggregationByYear = useMemo(() => {
         return filteredOriginalData.reduce((obj: { [key: string]: number }, currentItem: MovieType) => {
@@ -68,9 +70,12 @@ export default function StatisticsPage() {
     const adaptedResult4 = filters.Sdarot ? adaptedResult3 : adaptedResult3.filter(item => item.label !== "Sdarot")
 
 
-
+    const max = window.screen.width;
     return < div >
         <div>
+            <input type="range" max={max} min={200} value={chartWidth} onChange={(e) => {
+                setChartWidth(Number(e.target.value))
+            }} />
             <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Filter By Types</InputLabel>
                 <Select
@@ -91,7 +96,7 @@ export default function StatisticsPage() {
             <BarChart
                 xAxis={[{ scaleType: 'band', data: barChartGroups }]}
                 series={[{ data: barChartData }]}
-                width={500}
+                width={chartWidth}
                 height={300}
             />
             <Button onClick={() => {

@@ -169,5 +169,5 @@ Real Example:
 - User Saved to history 20 movies '7/31/2024, 8:50:07 PM'
 
 4. present all the list of operations in a new Page called Audit page.
-5. add simple text filter by movie name on the audit operations
+5. add simple text filter by movie name on the audit operations - not mandatory
 6. support chart size settings

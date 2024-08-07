@@ -57,7 +57,6 @@ function reducer(state: SettingStateType, action: { type: string, payload: any }
 
 export function ContextWrapper({ children }: { children: any }) {
     let favoritesInitialData = []
-    let timeInitialData = false;
     try {
         favoritesInitialData = JSON.parse(localStorage.getItem("favorites")) || []
         let value = localStorage.getItem("time")

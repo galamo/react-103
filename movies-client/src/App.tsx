@@ -13,6 +13,7 @@ import FavoritesPage from './components/pages/favorites';
 import { ContextWrapper } from './components/context';
 import SettingsPage from './components/pages/settings';
 import StatisticsPage from './components/pages/statistics';
+import { CarsPage } from './components/pages/cars';
 
 
 export const routes = [
@@ -52,6 +53,12 @@ export const routes = [
         label: "Settings",
         visible: true,
         element: <SettingsPage />,
+    },
+    {
+        path: "cars",
+        label: "cars",
+        visible: true,
+        element: <CarsPage />,
     },
 ]
 const router = createBrowserRouter([
